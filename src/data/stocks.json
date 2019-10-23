@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "AAPL",
+        "desc": "Apple Inc",
+        "quote": "500",
+        "numberOfStocks": "100",
+        "img": "https://previews.123rf.com/images/vasilyrosca/vasilyrosca1905/vasilyrosca190500573/123432009-dollar-money-icon-cash-sign-bill-symbol-flat-payment-dollar-currency-icon-.jpg",
+        "userId": 1
+    },
+    {
+        "id": 2,
+        "name": "FB",
+        "desc": "Facebook Inc",
+        "quote": "200",
+        "numberOfStocks": "100",
+        "img": "https://previews.123rf.com/images/vasilyrosca/vasilyrosca1905/vasilyrosca190500573/123432009-dollar-money-icon-cash-sign-bill-symbol-flat-payment-dollar-currency-icon-.jpg",
+        "userId": 1
+    },
+    {
+        "id": 3,
+        "name": "GOOGL",
+        "desc": "Alphabet Inc Class A",
+        "quote": "1200",
+        "numberOfStocks": "100",
+        "img": "https://previews.123rf.com/images/vasilyrosca/vasilyrosca1905/vasilyrosca190500573/123432009-dollar-money-icon-cash-sign-bill-symbol-flat-payment-dollar-currency-icon-.jpg",
+        "userId": 2
+    },
+    {
+        "id": 4,
+        "name": "NFLX",
+        "desc": "Netflix Inc",
+        "quote": "300",
+        "numberOfStocks": "100",
+        "img": "https://previews.123rf.com/images/vasilyrosca/vasilyrosca1905/vasilyrosca190500573/123432009-dollar-money-icon-cash-sign-bill-symbol-flat-payment-dollar-currency-icon-.jpg",
+        "userId": 2
+    }
+]

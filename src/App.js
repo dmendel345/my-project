@@ -7,7 +7,7 @@ import LoginPage from './pages/LoginPage'
 import SignUp from './pages/SignUp'
 import PortFolio from './pages/PortFolio';
 import jsonUsers from './data/users'
-import jsonRecipes from './data/recipes'
+import jsonStocks from './data/stocks'
 
 class App extends React.Component {
   constructor(props) {
@@ -15,17 +15,17 @@ class App extends React.Component {
     this.state = {
       activeUser: null,
       allUsers: jsonUsers,
-      allRecipes: jsonRecipes,
-      activeUserRecipes: []
-      // hack for starting with my recipes
-      // activeUserRecipes: jsonRecipes.filter(recipe => recipe.userId === 1)
+      allStocks: jsonStocks,
+      activeUserStocks: []
+      // hack for starting with my stocks
+      // activeUserStocks: jsonStocks.filter(stock => stock.userId === 1)
     }
 
     this.handleLogout = this.handleLogout.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
-    this.addRecipe = this.addRecipe.bind(this);
+    this.addStock = this.addStock.bind(this);
 
-    console.log(this.state.allRecipes);
+    console.log(this.state.allStocks);
   }
 
   handleLogout() {
@@ -34,27 +34,27 @@ class App extends React.Component {
 
   handleLogin(activeUser) {
 
-    const activeUserRecipes = this.state.allRecipes.filter(recipe => recipe.userId === activeUser.id)
+    const activeUserStocks = this.state.allStocks.filter(stock => stock.userId === activeUser.id)
 
-    this.setState({activeUser, activeUserRecipes});
+    this.setState({activeUser, activeUserStocks});
   }
 
-  addRecipe(newRecipe) {
-    //const {activeUser, allRecipes, activeUserRecipes} this.state.activeUser
-    // 1) add id and user to the recipe
-    newRecipe.userId = this.state.activeUser.id;
-    newRecipe.id = this.state.allRecipes[this.state.allRecipes.length - 1].id + 1;
+  addStock(newStock) {
+    //const {activeUser, allStocks, activeUserStocks} this.state.activeUser
+    // 1) add id and user to the stock
+    newStock.userId = this.state.activeUser.id;
+    newStock.id = this.state.allStocks[this.state.allStocks.length - 1].id + 1;
 
-    // 2) update all recipes and active user recipes
-    const allRecipes = this.state.allRecipes.concat(newRecipe);
-    const activeUserRecipes = this.state.activeUserRecipes.concat(newRecipe);
+    // 2) update all stocks and active user stocks
+    const allStocks = this.state.allStocks.concat(newStock);
+    const activeUserStocks = this.state.activeUserStocks.concat(newStock);
 
-    this.setState({allRecipes, activeUserRecipes});
+    this.setState({allStocks, activeUserStocks});
   }
 
   render() {
 
-    const { activeUser, allUsers, activeUserRecipes } = this.state;
+    const { activeUser, allUsers, activeUserStocks } = this.state;
     // const activeUser = this.state.activeUser;
 
   return (
@@ -69,7 +69,7 @@ class App extends React.Component {
         <SignUp users={allUsers} handleLogin={this.handleLogin}/>
       </Route>
       <Route path="/portfolio">
-        <PortFolio recipes={activeUserRecipes} activeUser={activeUser} handleLogout={this.handleLogout} addRecipe={this.addRecipe}/>
+        <PortFolio stocks={activeUserStocks} activeUser={activeUser} handleLogout={this.handleLogout} addStock={this.addStock}/>
       </Route>
     </Switch>
   );
