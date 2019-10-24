@@ -25,6 +25,7 @@ class PortFolio extends React.Component {
         this.nameInput = React.createRef();
         this.descInput = React.createRef();
         this.quoteInput = React.createRef();
+        this.numberOfStocksInput = React.createRef();
         this.imgInput = React.createRef();
     }
 
@@ -55,6 +56,7 @@ class PortFolio extends React.Component {
             name: this.nameInput.current.value,
             desc: this.descInput.current.value,
             quote: this.quoteInput.current.value,
+            numberOfStocks: this.numberOfStocksInput.current.value,
             img: this.state.newStockImg.URL,
         }
 
@@ -79,11 +81,14 @@ class PortFolio extends React.Component {
                 <Jumbotron>
                     <Container>
                     <div className="stocks-header">
-                        <h1>{activeUser.fname}'s Stocks</h1>
+                        <h1>{activeUser.fname}'s Stocks portfolio.</h1>
                         <Button variant="primary" onClick={this.openModal}>New Stock</Button>
                     </div>
                     <Row>
                         {stocksCards}
+                    </Row>
+                    <Row>
+                        Total Value: 
                     </Row>
                 </Container>
 
@@ -123,6 +128,15 @@ class PortFolio extends React.Component {
 
                             <Form.Group as={Row} controlId="formHorizontalPassword">
                                 <Form.Label column sm={2}>
+                                    Number of Stocks
+                                </Form.Label>
+                                <Col sm={10}>
+                                    <Form.Control ref={this.numberOfStocksInput} type="text" placeholder="Number of Stocks" />
+                                </Col>
+                            </Form.Group>
+
+                            <Form.Group as={Row} controlId="formHorizontalPassword">
+                                <Form.Label column sm={2}>
                                     Image
                                 </Form.Label>
                                 <Col sm={6}>
@@ -144,9 +158,11 @@ class PortFolio extends React.Component {
                         </Button>
                     </Modal.Footer>
                 </Modal>
-                <p>
+                {/* <div>
+                    <p>
                             <Button variant="primary" href="#/">Homepage</Button>
                         </p>
+                        </div> */}
                         </Jumbotron>
 
             </div>
