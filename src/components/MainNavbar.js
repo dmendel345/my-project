@@ -41,7 +41,8 @@ class MainNavbar extends React.Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#/portfolio">portfolio</Nav.Link>
+                        <Nav.Link href="#/portfolio">Portfolio</Nav.Link>
+                        <Nav.Link href="#/realestate">Real Estate</Nav.Link>
                     </Nav>
                     <Nav className="ml-auto">
                         {signupLink}

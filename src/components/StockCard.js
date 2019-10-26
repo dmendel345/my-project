@@ -21,8 +21,8 @@ class StockCard extends React.Component {
                     <Card.Text>{stock.desc}</Card.Text>
                     <Card.Text>{stock.quote}$</Card.Text>
                     <Card.Text>
-                        {/* Current value: {stock.quote * stock.numberOfStocks}$ */}
-                        Current value: {this.state.currentValue}$
+                        Current value: {stock.quote * stock.numberOfStocks}$
+                        {/* Current value: {this.state.currentValue}$ */}
                     </Card.Text>
                 </Card.Body>
             </Card>
