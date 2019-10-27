@@ -14,8 +14,8 @@ class StockCard extends React.Component {
         const { stock } = this.props;
         return (
             <Card className="stock">
-                {/* <Card.Img variant="top" src={stock.img} /> */}
-                <Card.Img variant="top" src={img} />
+                <Card.Img variant="top" src={stock.img} />
+                {/* <Card.Img variant="top" src={img} /> */}
                 <Card.Body>
                     <Card.Title>{stock.name}</Card.Title>
                     <Card.Text>{stock.desc}</Card.Text>

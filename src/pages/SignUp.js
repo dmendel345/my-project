@@ -13,7 +13,7 @@ class SignUp extends React.Component {
                 <Jumbotron>
                     <Container>
                         <h1 className="display-3">SignUp Page</h1>
-                        <p>SignUp Page</p>
+                        <p>Call 911 for help :)</p>
                         <p>
                             <Button variant="primary" href="#/">Homepage</Button>
                         </p>

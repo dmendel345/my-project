@@ -7,9 +7,10 @@ import LoginPage from './pages/LoginPage'
 import SignUp from './pages/SignUp'
 import PortFolio from './pages/PortFolio';
 import RealEstate from './pages/RealEstate';
+import Communication from './pages/Communication'
 import jsonUsers from './data/users'
 import jsonStocks from './data/stocks'
-import jsonEstate from './data/estate'
+import jsonEstate from './data/properties';
 
 class App extends React.Component {
   constructor(props) {
@@ -74,7 +75,10 @@ class App extends React.Component {
         <PortFolio stocks={activeUserStocks} activeUser={activeUser} handleLogout={this.handleLogout} addStock={this.addStock}/>
       </Route>
       <Route path="/realestate">
-        <PortFolio stocks={activeUserStocks} activeUser={activeUser} handleLogout={this.handleLogout} addStock={this.addStock}/>
+        <RealEstate stocks={activeUserStocks} activeUser={activeUser} handleLogout={this.handleLogout} addStock={this.addStock}/>
+      </Route>
+      <Route path="/communication">
+        <Communication stocks={activeUserStocks} activeUser={activeUser} handleLogout={this.handleLogout} addStock={this.addStock}/>
       </Route>
     </Switch>
   );

@@ -14,8 +14,8 @@ class RealEstateCard extends React.Component {
         const { asset } = this.props;
         return (
             <Card className="asset">
-                {/* <Card.Img variant="top" src={asset.img} /> */}
-                <Card.Img variant="top" src={img} />
+                <Card.Img variant="top" src={asset.img} />
+                {/* <Card.Img variant="top" src={img} /> */}
                 <Card.Body>
                     <Card.Title>{asset.name}</Card.Title>
                     <Card.Text>{asset.desc}</Card.Text>

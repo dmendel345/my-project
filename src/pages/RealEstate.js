@@ -82,7 +82,7 @@ class RealEstate extends React.Component {
                     <Container>
                     <div className="RealEstate-header">
                         <h1>{activeUser.fname}'s Real Estate.</h1>
-                        <Button variant="primary" onClick={this.openModal}>New Asset</Button>
+                        {/* <Button variant="primary" onClick={this.openModal}>New property</Button> */}
                     </div>
                     <Row>
                         {realEstateCards}

@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "MALL",
+        "desc": "Mall Inc",
+        "quote": "2000000",
+        "numberOfStocks": "10",
+        "img": "",
+        "userId": 1
+    },
+    {
+        "id": 2,
+        "name": "STORAGE",
+        "desc": "Storage Inc",
+        "quote": "1500000",
+        "numberOfStocks": "2",
+        "img": "",
+        "userId": 1
+    },
+    {
+        "id": 3,
+        "name": "TOWN HOUSE",
+        "desc": "Town house",
+        "quote": "250000",
+        "numberOfStocks": "3",
+        "img": "",
+        "userId": 2
+    },
+    {
+        "id": 4,
+        "name": "GARAGE",
+        "desc": "Garage Inc",
+        "quote": "150000",
+        "numberOfStocks": "3",
+        "img": "",
+        "userId": 2
+    }
+]

@@ -5,7 +5,7 @@
         "desc": "Apple Inc",
         "quote": "500",
         "numberOfStocks": "100",
-        "img": "",
+        "img": "https://www.logodesignlove.com/images/classic/apple-logo-rob-janoff-01.jpg",
         "userId": 1
     },
     {
@@ -14,7 +14,7 @@
         "desc": "Facebook Inc",
         "quote": "200",
         "numberOfStocks": "100",
-        "img": "",
+        "img": "https://image.flaticon.com/icons/svg/124/124010.svg",
         "userId": 1
     },
     {
@@ -22,12 +22,21 @@
         "name": "GOOGL",
         "desc": "Alphabet Inc Class A",
         "quote": "1200",
-        "numberOfStocks": "100",
-        "img": "https://previews.123rf.com/images/vasilyrosca/vasilyrosca1905/vasilyrosca190500573/123432009-dollar-money-icon-cash-sign-bill-symbol-flat-payment-dollar-currency-icon-.jpg",
-        "userId": 2
+        "numberOfStocks": "250",
+        "img": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+        "userId": 1
     },
     {
         "id": 4,
+        "name": "GOOGL",
+        "desc": "Alphabet Inc Class A",
+        "quote": "1200",
+        "numberOfStocks": "100",
+        "img": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+        "userId": 2
+    },
+    {
+        "id": 5,
         "name": "NFLX",
         "desc": "Netflix Inc",
         "quote": "300",
