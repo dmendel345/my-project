@@ -1,27 +1,27 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
-import img from '../components/dollar-money-icon.jpg';
+// import img from '../components/dollar-money-icon.jpg';
 
 
 class RealEstateCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // currentValue: = this.props.asset.quote * this.props.asset.numberOfStocks
+            // currentValue: = this.props.property.quote * this.props.property.numberOfStocks
                 }
     }
     render() {
-        const { asset } = this.props;
+        const { property } = this.props;
         return (
-            <Card className="asset">
-                <Card.Img variant="top" src={asset.img} />
+            <Card className="property">
+                <Card.Img variant="top" src={property.img} />
                 {/* <Card.Img variant="top" src={img} /> */}
                 <Card.Body>
-                    <Card.Title>{asset.name}</Card.Title>
-                    <Card.Text>{asset.desc}</Card.Text>
-                    <Card.Text>{asset.quote}$</Card.Text>
+                    <Card.Title>{property.name}</Card.Title>
+                    <Card.Text>{property.desc}</Card.Text>
+                    <Card.Text>{property.quote}$</Card.Text>
                     <Card.Text>
-                        Current value: {asset.quote * asset.numberOfStocks}$
+                        Current value: {property.quote * property.numberOfStocks}$
                         {/* Current value: {this.state.currentValue}$ */}
                     </Card.Text>
                 </Card.Body>

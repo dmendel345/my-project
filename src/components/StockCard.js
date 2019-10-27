@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
-import img from '../components/dollar-money-icon.jpg';
+// import img from '../components/dollar-money-icon.jpg';
 
 
 class StockCard extends React.Component {

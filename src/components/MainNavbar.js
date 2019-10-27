@@ -43,7 +43,7 @@ class MainNavbar extends React.Component {
                     <Nav className="mr-auto">
                         <Nav.Link href="#/portfolio">Portfolio</Nav.Link>
                         <Nav.Link href="#/realestate">Real Estate</Nav.Link>
-                        <Nav.Link href="#/communication">Communicate</Nav.Link>
+                        <Nav.Link href="#/communication">Communicate with Us</Nav.Link>
                     </Nav>
                     <Nav className="ml-auto">
                         {signupLink}

@@ -10,7 +10,7 @@ class RealEstate extends React.Component {
         super(props);
         this.state = {
             showModal: false,
-            newAssetImg: {
+            newPropertyImg: {
                 file: null,
                 URL: ""
             }
@@ -18,7 +18,7 @@ class RealEstate extends React.Component {
 
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
-        this.createAsset = this.createAsset.bind(this);
+        this.createProperty = this.createProperty.bind(this);
         this.imgChange = this.imgChange.bind(this);
 
 
@@ -31,15 +31,15 @@ class RealEstate extends React.Component {
 
     imgChange(ev) {
 
-        let newAssetImg = {};
-        newAssetImg.file = ev.target.files[0];
-        if (newAssetImg.file) {
-            newAssetImg.URL = URL.createObjectURL(newAssetImg.file);
+        let newPropertyImg = {};
+        newPropertyImg.file = ev.target.files[0];
+        if (newPropertyImg.file) {
+            newPropertyImg.URL = URL.createObjectURL(newPropertyImg.file);
         } else {
-            newAssetImg.URL = "";
+            newPropertyImg.URL = "";
         }
 
-        this.setState({newAssetImg});
+        this.setState({newPropertyImg});
     }
 
 
@@ -51,29 +51,29 @@ class RealEstate extends React.Component {
         this.setState({ showModal: false })
     }
 
-    createAsset() {
-        const newAsset = {
+    createProperty() {
+        const newProperty = {
             name: this.nameInput.current.value,
             desc: this.descInput.current.value,
             quote: this.quoteInput.current.value,
             numberOfRealEstate: this.numberOfRealEstateInput.current.value,
-            img: this.state.newAssetImg.URL,
+            img: this.state.newPropertyImg.URL,
         }
 
-        this.props.addAsset(newAsset);
+        this.props.addProperty(newProperty);
         this.closeModal();
     }
 
     render() {
         const { activeUser, handleLogout, stocks } = this.props;
-        const { showModal, newAssetImg } = this.state;
+        const { showModal, newPropertyImg } = this.state;
         //const showModal = this.state.showModal;
 
         if (!activeUser) {
             return <Redirect to="/" />
         }
 
-        const realEstateCards = stocks.map(asset => <Col key={asset.id} lg="3" md="6"><RealEstateCard asset={asset} /></Col>)
+        const realEstateCards = stocks.map(property => <Col key={property.id} lg="3" md="6"><RealEstateCard property={property} /></Col>)
 
         return (
             <div>
@@ -95,7 +95,7 @@ class RealEstate extends React.Component {
 
                 <Modal show={showModal} onHide={this.closeModal} size="lg">
                     <Modal.Header closeButton>
-                        <Modal.Title>New Asset</Modal.Title>
+                        <Modal.Title>New Property</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form>
@@ -104,7 +104,7 @@ class RealEstate extends React.Component {
                                     Name
                                 </Form.Label>
                                 <Col sm={10}>
-                                    <Form.Control ref={this.nameInput} type="text" placeholder="Asset name" />
+                                    <Form.Control ref={this.nameInput} type="text" placeholder="Property name" />
                                 </Col>
                             </Form.Group>
 
@@ -113,7 +113,7 @@ class RealEstate extends React.Component {
                                     Description
                                 </Form.Label>
                                 <Col sm={10}>
-                                    <Form.Control ref={this.descInput} type="text" placeholder="Asset description" />
+                                    <Form.Control ref={this.descInput} type="text" placeholder="Property description" />
                                 </Col>
                             </Form.Group>
 
@@ -122,7 +122,7 @@ class RealEstate extends React.Component {
                                     Quote
                                 </Form.Label>
                                 <Col sm={10}>
-                                    <Form.Control ref={this.quoteInput} type="text" placeholder="Asset quote" />
+                                    <Form.Control ref={this.quoteInput} type="text" placeholder="Property quote" />
                                 </Col>
                             </Form.Group>
 
@@ -140,10 +140,10 @@ class RealEstate extends React.Component {
                                     Image
                                 </Form.Label>
                                 <Col sm={6}>
-                                    <Form.Control type="file" placeholder="Asset image URL" accept="image/*" onChange={this.imgChange}/>
+                                    <Form.Control type="file" placeholder="Property image URL" accept="image/*" onChange={this.imgChange}/>
                                 </Col>
                                 <Col sm={4}>
-                                    <Image src={newAssetImg.URL} fluid/>
+                                    <Image src={newPropertyImg.URL} fluid/>
                                 </Col>
                             </Form.Group>
 
@@ -153,8 +153,8 @@ class RealEstate extends React.Component {
                         <Button variant="secondary" onClick={this.closeModal}>
                             Close
                         </Button>
-                        <Button variant="primary" onClick={this.createAsset}>
-                            Create Asset
+                        <Button variant="primary" onClick={this.createProperty}>
+                            Create Property
                         </Button>
                     </Modal.Footer>
                 </Modal>

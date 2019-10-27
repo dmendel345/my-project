@@ -7,10 +7,10 @@ import LoginPage from './pages/LoginPage'
 import SignUp from './pages/SignUp'
 import PortFolio from './pages/PortFolio';
 import RealEstate from './pages/RealEstate';
-import Communication from './pages/Communication'
+import Communication from './pages/Communication';
 import jsonUsers from './data/users'
 import jsonStocks from './data/stocks'
-import jsonEstate from './data/properties';
+// import jsonEstate from './data/properties';
 
 class App extends React.Component {
   constructor(props) {

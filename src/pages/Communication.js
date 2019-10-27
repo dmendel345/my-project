@@ -1,43 +1,78 @@
 import React from 'react'
 import MainNavbar from '../components/MainNavbar'
-import { Jumbotron, Container, Image } from 'react-bootstrap'
-import { Redirect } from 'react-router-dom'
+import { Jumbotron, Container, Button, Form } from 'react-bootstrap'
+import { Redirect } from 'react-router-dom';
 
+class Communication extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
 
+  comunicate() {
+  }
 
-  class Communication extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
+  render() {
+
+    var Col = {};
+    const { activeUser, handleLogout } = this.props;
+
+    if (!activeUser) {
+      return <Redirect to="/" />
     }
 
-    render() {
+    return (
+      <div>
+      <MainNavbar activeUser={activeUser} handleLogout={handleLogout} />
+      <Jumbotron>
+        <Container>
+          <div classname="comunicate">
+            <Form>
+              <Form.Row>
 
-        var background = { backgroundSize: 'auto' };
-        const { activeUser, handleLogout } = this.props;
+                <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control type="email" placeholder="Enter email" />
+                </Form.Group>
+              </Form.Row>
 
-        return (
-            <div>
-                <MainNavbar activeUser={activeUser} handleLogout={handleLogout} />
-                <Jumbotron>
-                    <Container>
-                        <h1 className="display-3">Communication</h1>
-                        <h3 className="display-6">Request from your Portfolio manager.</h3>
-                        <Image
-                            style={background} className="img-fluid"
-                            src="https://image.freepik.com/free-vector/communication-information-website-graphic_53876-27044.jpg">
-                        </Image>
-                        <p>Lets Talk! </p>
-                        {/* <p>
-                            <Button variant="primary" href="#/login">Login </Button>
+              <Form.Group controlId="formGridFName">
+                <Form.Label>Your First Name</Form.Label>
+                <Form.Control placeholder="Israel" />
+              </Form.Group>
 
-                            <Button variant="primary" href="#/Signup">SignUp</Button>
-                        </p> */}
-                        </Container>
-                        </Jumbotron>
-            </div>
+              <Form.Group controlId="formGridLName">
+                <Form.Label>Your Last Name</Form.Label>
+                <Form.Control placeholder="Israeli" />
+              </Form.Group>
+
+              <Form.Row>
+
+                <Form.Group as={Col} controlId="formGridInvesrtorType">
+                  <Form.Label>What risk you you like</Form.Label>
+                  <Form.Control placeholder="Enter your preferance" />
+                </Form.Group>
+
+                <Form.Group as={Col} controlId="formGridCapital">
+                  <Form.Label>Your initial investment</Form.Label>
+                  <Form.Control placeholder="Enter you like to invest" />
+                </Form.Group>
+              </Form.Row>
+
+              <Form.Group id="formGridCheckbox">
+                <Form.Check type="checkbox" label="Check me out" />
+              </Form.Group>
+
+              <Button variant="primary" type="submit">
+                Submit
+                </Button>
+            </Form>
+          </div>
+        </Container>
+      </Jumbotron>
+      </div>
         );
-    }
+  }
 }
 
 export default Communication;

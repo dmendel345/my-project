@@ -19,7 +19,7 @@ class HomePage extends React.Component {
                 <MainNavbar activeUser={activeUser} handleLogout={handleLogout} />
                 <Jumbotron>
                     <Container>
-                        <h1 className="display-3">Portfolio Home page</h1>
+                        <h1 className="display-3">Your Wealth Home page</h1>
                         <Image
                             style={background} className="img-fluid"
                             src="http://www.annettapowell.com/wp-content/uploads/2018/08/20160707-RealStateJump.gif">

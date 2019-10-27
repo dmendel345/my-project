@@ -3,14 +3,14 @@
         "id": 1,
         "fname": "User1",
         "lname": "User1",
-        "email": "user1@user1.com",
+        "email": "user1",
         "pwd": "123"
     },
     {
         "id": 2,
         "fname": "User2",
         "lname": "User2",
-        "email": "user2@user2.com",
+        "email": "user2",
         "pwd": "123"
     }
 ]
