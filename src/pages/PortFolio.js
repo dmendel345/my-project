@@ -175,12 +175,12 @@ class PortFolio extends React.Component {
                     </Modal.Header>
                     <Modal.Body>
                         <Form>
-                            <Form.Group as={Row} controlId="formHorizontalEmail">
+                            <Form.Group as={Row} controlId="formHorizontalEmail" >
                                 <Form.Label column sm={2}>
                                     Name
                                 </Form.Label>
                                 <Col sm={10}>
-                                    <Form.Control ref={this.nameInput} type="text" placeholder="Stock name" />
+                                    <Form.Control required ref={this.nameInput} type="text" placeholder="Stock name" />
                                 </Col>
                             </Form.Group>
 
@@ -198,7 +198,7 @@ class PortFolio extends React.Component {
                                     Quote
                                 </Form.Label>
                                 <Col sm={10}>
-                                    <Form.Control ref={this.quoteInput} type="text" placeholder="Stock quote" />
+                                    <Form.Control required ref={this.quoteInput} type="text" placeholder="Stock quote" />
                                 </Col>
                             </Form.Group>
 
@@ -207,23 +207,22 @@ class PortFolio extends React.Component {
                                     Number of Stocks
                                 </Form.Label>
                                 <Col sm={10}>
-                                    <Form.Control ref={this.numberOfStocksInput} type="text" placeholder="Number of Stocks" />
+                                    <Form.Control required ref={this.numberOfStocksInput} type="text" placeholder="Number of Stocks" />
                                 </Col>
                             </Form.Group>
 
-                            <Form.Group as={Row} controlId="formHorizontalPassword">
+                            {/* <Form.Group as={Row} controlId="formHorizontalPassword">
                                 <Form.Label column sm={2}>
                                     What is the stock risk 1 = low / 2 = medium / 3 = high
                                 </Form.Label>
                                 <Col sm={10}>
                                     <Form.Control ref={this.riskValueInput} type="text" placeholder="What is the stock risk" />
                                 </Col>
-                            </Form.Group>
+                            </Form.Group> */}
 
-                            {/* <Form.Group as={Row} controlId="formHorizontalPassword">
+                            <Form.Group as={Row} controlId="formHorizontalPassword">
                                 <Form.Label column sm={2}>
-                                    What is the stock risk ?
-                                    low / medium / high
+                                    What is this stock risk ?
                                 </Form.Label>
                                 <Col sm={10}>
                                     <Form.Control ref={this.riskValueInput} as="select" type="select" placeholder="What is the stock risk">
@@ -234,11 +233,11 @@ class PortFolio extends React.Component {
                                        
                                      </Form.Control>
                                 </Col>
-                            </Form.Group> */}
+                            </Form.Group>
 
                             <Form.Group as={Row} controlId="formHorizontalPassword">
                                 <Form.Label column sm={2}>
-                                    Image
+                                    Image, this is optional
                                 </Form.Label>
                                 <Col sm={6}>
                                     <Form.Control type="file" placeholder="Stock image URL" accept="image/*" onChange={this.imgChange}/>

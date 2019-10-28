@@ -1,8 +1,9 @@
 import React from 'react'
 import MainNavbar from '../components/MainNavbar'
-import { Jumbotron, Container, Button, Form, Col } from 'react-bootstrap'
+import { Jumbotron, Container, Button, Form, Col, Image } from 'react-bootstrap'
 import { Redirect } from 'react-router-dom';
 import emailjs from 'emailjs-com';
+import './Communication.css';
 
 class Communication extends React.Component {
   constructor(props) {
@@ -16,6 +17,13 @@ class Communication extends React.Component {
   render() {
 
     const { activeUser, handleLogout } = this.props;
+    var background = {backgroundSize : 'auto'};
+    var textStyle1 = {
+      position: 'absolute', 
+      top: '50%', 
+      left: '50%',
+      color: 'Black'
+    };
 
     if (!activeUser) {
       return <Redirect to="/" />
@@ -27,12 +35,15 @@ class Communication extends React.Component {
       <Jumbotron>
         <Container>
           <div className="comunicate">
-            <Form>
+          <Image style={background} className="img-fluid" 
+          src="https://wallpapercave.com/wp/wp2106900.jpg">
+          </Image>
+            <Form style={textStyle1}>
               <Form.Row>
 
                 <Form.Group as={Col} controlId="formGridEmail">
                   <Form.Label>Email</Form.Label>
-                  <Form.Control type="email" placeholder="Enter email" />
+                  <Form.Control type="email" placeholder="email@email.com" />
                 </Form.Group>
               </Form.Row>
 
@@ -49,18 +60,19 @@ class Communication extends React.Component {
               <Form.Row>
 
                 <Form.Group as={Col} controlId="formGridInvesrtorType">
-                  <Form.Label>What kind of investore are you.</Form.Label>
-                  <Form.Control placeholder="Enter your preferance" />
+                  <Form.Label>What kind of investor are you ?</Form.Label>
+                  <Form.Control placeholder="Example - I hate risk" />
                 </Form.Group>
-
+                </Form.Row>
+                <Form.Row>
                 <Form.Group as={Col} controlId="formGridCapital">
                   <Form.Label>Your initial investment</Form.Label>
-                  <Form.Control placeholder="Enter you like to invest" />
+                  <Form.Control placeholder="300,000 $" />
                 </Form.Group>
               </Form.Row>
 
               <Form.Group id="formGridCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
+                <Form.Check type="checkbox" label="I want to get rich !" />
               </Form.Group>
 
               <Button variant="primary" type="submit">

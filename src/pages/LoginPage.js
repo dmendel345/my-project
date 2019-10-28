@@ -1,6 +1,7 @@
 import React from 'react'
 import { Jumbotron, Button, Container, Form, Alert } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom'
+import './Communication.css';
 
 class LoginPage extends React.Component {
     constructor(props) {

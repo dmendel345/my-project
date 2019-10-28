@@ -19,6 +19,7 @@ class App extends React.Component {
       activeUser: null,
       allUsers: jsonUsers,
       allStocks: jsonStocks,
+      allProperties: jsonEstate,
       activeUserStocks: []
       // hack for starting with my stocks
       // activeUserStocks: jsonStocks.filter(stock => stock.userId === 1)
@@ -27,8 +28,10 @@ class App extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
     this.addStock = this.addStock.bind(this);
+    this.addProperty = this.addProperty.bind(this);
 
     console.log(this.state.allStocks);
+    console.log(this.state.allProperties);
   }
 
   handleLogout() {
@@ -59,6 +62,23 @@ class App extends React.Component {
     this.setState({allStocks, activeUserStocks});
   }
 
+  addProperty(newProperty) {
+    //const {activeUser, allStocks, activeUserStocks} this.state.activeUser
+    // 1) add id and user to the stock
+    newProperty.userId = this.state.activeUser.id;
+    newProperty.id = this.state.allProperties[this.state.allProperties.length - 1].id + 1;
+
+    // // for the sake of the chart example adding a hard coded riskValue (easy)
+    // newProperty.riskValue = 1;
+
+
+    // 2) update all stocks and active user stocks
+    const allProperties = this.state.allProperties.concat(newProperty);
+    const activeUserStocks = this.state.activeUserStocks.concat(newProperty);
+
+    this.setState({allProperties, activeUserStocks});
+  }
+
   render() {
 
     const { activeUser, allUsers, activeUserStocks } = this.state;
@@ -79,7 +99,7 @@ class App extends React.Component {
         <PortFolio stocks={activeUserStocks} activeUser={activeUser} handleLogout={this.handleLogout} addStock={this.addStock}/>
       </Route>
       <Route path="/realestate">
-        <RealEstate properties={activeUserStocks} activeUser={activeUser} handleLogout={this.handleLogout} addStock={this.addStock}/>
+        <RealEstate properties={activeUserStocks} activeUser={activeUser} handleLogout={this.handleLogout} addProperty={this.addProperty}/>
       </Route>
       <Route path="/communication">
         <Communication stocks={activeUserStocks} activeUser={activeUser} handleLogout={this.handleLogout} addStock={this.addStock}/>
