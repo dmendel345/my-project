@@ -65,7 +65,7 @@ class RealEstate extends React.Component {
     }
 
     render() {
-        const { activeUser, handleLogout, stocks } = this.props;
+        const { activeUser, handleLogout, properties } = this.props;
         const { showModal, newPropertyImg } = this.state;
         //const showModal = this.state.showModal;
 
@@ -73,7 +73,7 @@ class RealEstate extends React.Component {
             return <Redirect to="/" />
         }
 
-        const realEstateCards = stocks.map(property => <Col key={property.id} lg="3" md="6"><RealEstateCard property={property} /></Col>)
+        const realEstateCards = properties.map(property => <Col key={property.id} lg="3" md="6"><RealEstateCard property={property} /></Col>)
 
         return (
             <div>
