@@ -48,6 +48,10 @@ class App extends React.Component {
     newStock.userId = this.state.activeUser.id;
     newStock.id = this.state.allStocks[this.state.allStocks.length - 1].id + 1;
 
+    // for the sake of the chart example adding a hard coded riskValue (easy)
+    newStock.riskValue = 1;
+
+
     // 2) update all stocks and active user stocks
     const allStocks = this.state.allStocks.concat(newStock);
     const activeUserStocks = this.state.activeUserStocks.concat(newStock);

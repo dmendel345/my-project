@@ -21,7 +21,7 @@ class RealEstateCard extends React.Component {
                     <Card.Text>{property.desc}</Card.Text>
                     <Card.Text>{property.quote}$</Card.Text>
                     <Card.Text>
-                        Current value: {property.quote * property.numberOfStocks}$
+                        {/* Current value: {property.quote * property.numberOfStocks}$ */}
                         {/* Current value: {this.state.currentValue}$ */}
                     </Card.Text>
                 </Card.Body>

@@ -6,7 +6,8 @@
         "quote": "500",
         "numberOfStocks": "100",
         "img": "https://www.logodesignlove.com/images/classic/apple-logo-rob-janoff-01.jpg",
-        "userId": 1
+        "userId": 1,
+        "riskValue": 1
     },
     {
         "id": 2,
@@ -15,7 +16,8 @@
         "quote": "200",
         "numberOfStocks": "100",
         "img": "https://image.flaticon.com/icons/svg/124/124010.svg",
-        "userId": 1
+        "userId": 1,
+        "riskValue": 2
     },
     {
         "id": 3,
@@ -24,7 +26,8 @@
         "quote": "1200",
         "numberOfStocks": "250",
         "img": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
-        "userId": 1
+        "userId": 1,
+        "riskValue": 3
     },
     {
         "id": 4,
@@ -33,7 +36,8 @@
         "quote": "1200",
         "numberOfStocks": "100",
         "img": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
-        "userId": 2
+        "userId": 2,
+        "riskValue": 3
     },
     {
         "id": 5,
@@ -42,6 +46,7 @@
         "quote": "300",
         "numberOfStocks": "100",
         "img": "https://cdn.worldvectorlogo.com/logos/netflix-2.svg",
-        "userId": 2
+        "userId": 2,
+        "riskValue": 2
     }
 ]

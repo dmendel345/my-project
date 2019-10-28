@@ -13,7 +13,7 @@ class StockCard extends React.Component {
     render() {
         const { stock } = this.props;
         return (
-            <Card className="stock">
+            <Card style={{ width: '12em' , high: '10em'}} className="stock">
                 <Card.Img variant="top" src={stock.img} />
                 {/* <Card.Img variant="top" src={img} /> */}
                 <Card.Body>

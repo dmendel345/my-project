@@ -87,9 +87,6 @@ class RealEstate extends React.Component {
                     <Row>
                         {realEstateCards}
                     </Row>
-                    <Row>
-                        Total Value: 
-                    </Row>
                 </Container>
 
 

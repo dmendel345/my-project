@@ -5,7 +5,10 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { HashRouter } from 'react-router-dom'
+import emailjs from 'emailjs-com';
 
+// Initializing emailjs
+emailjs.init("user_ZrEN8xAKMxrQh507rTgzk");
 
 ReactDOM.render(<HashRouter><App /></HashRouter>, document.getElementById('root'));
 

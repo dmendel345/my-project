@@ -1,7 +1,8 @@
 import React from 'react'
 import MainNavbar from '../components/MainNavbar'
-import { Jumbotron, Container, Button, Form } from 'react-bootstrap'
+import { Jumbotron, Container, Button, Form, Col } from 'react-bootstrap'
 import { Redirect } from 'react-router-dom';
+import emailjs from 'emailjs-com';
 
 class Communication extends React.Component {
   constructor(props) {
@@ -14,7 +15,6 @@ class Communication extends React.Component {
 
   render() {
 
-    var Col = {};
     const { activeUser, handleLogout } = this.props;
 
     if (!activeUser) {
@@ -26,7 +26,7 @@ class Communication extends React.Component {
       <MainNavbar activeUser={activeUser} handleLogout={handleLogout} />
       <Jumbotron>
         <Container>
-          <div classname="comunicate">
+          <div className="comunicate">
             <Form>
               <Form.Row>
 
@@ -49,7 +49,7 @@ class Communication extends React.Component {
               <Form.Row>
 
                 <Form.Group as={Col} controlId="formGridInvesrtorType">
-                  <Form.Label>What risk you you like</Form.Label>
+                  <Form.Label>What kind of investore are you.</Form.Label>
                   <Form.Control placeholder="Enter your preferance" />
                 </Form.Group>
 
@@ -68,6 +68,7 @@ class Communication extends React.Component {
                 </Button>
             </Form>
           </div>
+          
         </Container>
       </Jumbotron>
       </div>
