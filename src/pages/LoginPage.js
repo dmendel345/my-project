@@ -47,8 +47,8 @@ class LoginPage extends React.Component {
 
         return (
             <Jumbotron>
-            <Container>
-            <div className="login">
+                <Container>
+                    <div className="login">
 
                         <h1>Login to your Portfolio</h1>
                         <p>or <a href="#/signup">create an account</a></p>
@@ -72,9 +72,9 @@ class LoginPage extends React.Component {
                                 Login
                     </Button>
                         </Form>
-                        </div>
-                    </Container>
-                </Jumbotron>
+                    </div>
+                </Container>
+            </Jumbotron>
 
         );
     }

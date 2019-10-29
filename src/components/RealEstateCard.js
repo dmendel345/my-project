@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
-// import img from '../components/dollar-money-icon.jpg';
+import img from '../components/monopoly-man.jpg';
 
 
 class RealEstateCard extends React.Component {
@@ -17,7 +17,7 @@ class RealEstateCard extends React.Component {
             console.log("this is RealEstate Card"),
             <Card style={{ width: '12em' , height: '10em'}} className="property">
                 <Card.Img variant="top" src={property.img} />
-                {/* <Card.Img variant="top" src={img} /> */}
+                <Card.Img variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{property.name}</Card.Title>
                     <Card.Text>{property.desc}</Card.Text>

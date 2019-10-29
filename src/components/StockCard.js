@@ -8,7 +8,7 @@ class StockCard extends React.Component {
         super(props);
         this.state = {
             // currentValue: = this.props.stock.quote * this.props.stock.numberOfStocks
-                }
+        }
     }
     render() {
         const { stock } = this.props;
@@ -16,20 +16,20 @@ class StockCard extends React.Component {
             console.log("this is Portfolio Card"),
             <Jumbotron>
                 <Container>
-            <Card style={{ width: '12em' , height: '10em'}} className="stock">
-                <Card.Img variant="top" src={stock.img} />
-                {/* <Card.Img variant="top" src={img} /> */}
-                <Card.Body>
-                    <Card.Title>{stock.name}</Card.Title>
-                    <Card.Text>{stock.desc}</Card.Text>
-                    <Card.Text>{stock.quote}$</Card.Text>
-                    <Card.Text>
-                        Current value: {stock.quote * stock.numberOfStocks}$
+                    <Card style={{ width: '12em', height: '10em' }} className="stock">
+                        <Card.Img variant="top" src={stock.img} />
+                        {/* <Card.Img variant="top" src={img} /> */}
+                        <Card.Body>
+                            <Card.Title>{stock.name}</Card.Title>
+                            <Card.Text>{stock.desc}</Card.Text>
+                            <Card.Text>{stock.quote}$</Card.Text>
+                            <Card.Text>
+                                Current value: {stock.quote * stock.numberOfStocks}$
                         {/* Current value: {this.state.currentValue}$ */}
-                    </Card.Text>
-                </Card.Body>
-            </Card>
-            </Container>
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Container>
             </Jumbotron>
         );
     }

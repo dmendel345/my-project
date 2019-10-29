@@ -30,8 +30,8 @@ class HomePage extends React.Component {
 
                             <Button variant="primary" href="#/Signup">SignUp</Button>
                         </p>
-                        </Container>
-                        </Jumbotron>
+                    </Container>
+                </Jumbotron>
             </div>
         );
     }

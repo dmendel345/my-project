@@ -24,14 +24,14 @@ class PortFolio extends React.Component {
                 datasets: [{
                     data: this.getChartData(),
                     backgroundColor: [
-                    '#FF6384',
-                    '#FAFF63',
-                    '#36A2EB',
+                        '#FF6384',
+                        '#FAFF63',
+                        '#36A2EB',
                     ],
                     hoverBackgroundColor: [
-                    '#30302f',
-                    '#30302f',
-                    '#30302f',
+                        '#30302f',
+                        '#30302f',
+                        '#30302f',
                     ]
                 }]
             }
@@ -62,11 +62,11 @@ class PortFolio extends React.Component {
                 low++;
             } else if (stock.riskValue === 2) {
                 medium++;
-            } else  {
-                 high++;
-             }
+            } else {
+                high++;
+            }
 
-       });
+        });
 
         // return [high, low];
         return [high, medium, low];
@@ -77,7 +77,7 @@ class PortFolio extends React.Component {
         // it must be inside an if statemnet to avoid an infiniate loop
         if (prevProps.stocks != this.props.stocks) {
             // update chart data
-            const  chartData = {
+            const chartData = {
                 labels: [
                     'High',
                     'Medium',
@@ -98,7 +98,7 @@ class PortFolio extends React.Component {
                 }]
             };
 
-            this.setState({chartData});
+            this.setState({ chartData });
         }
     }
 
@@ -112,7 +112,7 @@ class PortFolio extends React.Component {
             newStockImg.URL = "";
         }
 
-        this.setState({newStockImg});
+        this.setState({ newStockImg });
     }
 
 
@@ -132,9 +132,9 @@ class PortFolio extends React.Component {
             numberOfStocks: this.numberOfStocksInput.current.value,
             riskValue: parseInt(this.riskValueInput.current.value),
             img: this.state.newStockImg.URL,
-            
+
         }
-        console.log("this.riskValueInput.current.value = "+ this.riskValueInput.current.value)
+        console.log("this.riskValueInput.current.value = " + this.riskValueInput.current.value)
         // console.log(this.riskValueInput.current.value)
 
         this.props.addStock(newStock);
@@ -144,7 +144,7 @@ class PortFolio extends React.Component {
     render() {
         const { activeUser, handleLogout, stocks } = this.props;
         const { showModal, newStockImg, chartData } = this.state;
-        
+
         //const showModal = this.state.showModal;
 
         if (!activeUser) {
@@ -152,67 +152,67 @@ class PortFolio extends React.Component {
         }
 
         const stocksCards = stocks.map(stock => <Col key={stock.id} lg="3" md="6"><StockCard stock={stock} /></Col>)
-        
+
         return (
             <div>
                 <MainNavbar activeUser={activeUser} handleLogout={handleLogout} />
                 <Jumbotron>
                     <Container>
-                    <div className="stocks-header">
-                        <h1>{activeUser.fname}'s Stocks portfolio.</h1>
-                        <Button variant="primary" onClick={this.openModal}>New Stock</Button>
-                    </div>
-                    <Pie data={chartData} />
-                    <Row>
-                        {stocksCards}
-                    </Row>
-                    {/* <Row>
+                        <div className="stocks-header">
+                            <h1>{activeUser.fname}'s Stocks portfolio.</h1>
+                            <Button variant="primary" onClick={this.openModal}>New Stock</Button>
+                        </div>
+                        <Pie data={chartData} />
+                        <Row>
+                            {stocksCards}
+                        </Row>
+                        {/* <Row>
                         Total Value: 
                     </Row> */}
-                <div>
-                <Modal show={showModal} onHide={this.closeModal} size="lg">
-                    <Modal.Header closeButton>
-                        <Modal.Title>New Stock</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <Form>
-                            <Form.Group as={Row} controlId="formHorizontalEmail" >
-                                <Form.Label column sm={2}>
-                                    Name
+                        <div>
+                            <Modal show={showModal} onHide={this.closeModal} size="lg">
+                                <Modal.Header closeButton>
+                                    <Modal.Title>New Stock</Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body>
+                                    <Form>
+                                        <Form.Group as={Row} controlId="formHorizontalEmail" >
+                                            <Form.Label column sm={2}>
+                                                Name
                                 </Form.Label>
-                                <Col sm={10}>
-                                    <Form.Control required ref={this.nameInput} type="text" placeholder="Stock name" />
-                                </Col>
-                            </Form.Group>
+                                            <Col sm={10}>
+                                                <Form.Control required ref={this.nameInput} type="text" placeholder="Stock name" />
+                                            </Col>
+                                        </Form.Group>
 
-                            <Form.Group as={Row} controlId="formHorizontalPassword">
-                                <Form.Label column sm={2}>
-                                    Description
+                                        <Form.Group as={Row} controlId="formHorizontalPassword">
+                                            <Form.Label column sm={2}>
+                                                Description
                                 </Form.Label>
-                                <Col sm={10}>
-                                    <Form.Control ref={this.descInput} type="text" placeholder="Stock description" />
-                                </Col>
-                            </Form.Group>
+                                            <Col sm={10}>
+                                                <Form.Control ref={this.descInput} type="text" placeholder="Stock description" />
+                                            </Col>
+                                        </Form.Group>
 
-                            <Form.Group as={Row} controlId="formHorizontalPassword">
-                                <Form.Label column sm={2}>
-                                    Quote
+                                        <Form.Group as={Row} controlId="formHorizontalPassword">
+                                            <Form.Label column sm={2}>
+                                                Quote
                                 </Form.Label>
-                                <Col sm={10}>
-                                    <Form.Control required ref={this.quoteInput} type="number" placeholder="Stock quote" />
-                                </Col>
-                            </Form.Group>
+                                            <Col sm={10}>
+                                                <Form.Control required ref={this.quoteInput} type="number" placeholder="Stock quote" />
+                                            </Col>
+                                        </Form.Group>
 
-                            <Form.Group as={Row} controlId="formHorizontalPassword">
-                                <Form.Label column sm={2}>
-                                    Number of Stocks
+                                        <Form.Group as={Row} controlId="formHorizontalPassword">
+                                            <Form.Label column sm={2}>
+                                                Number of Stocks
                                 </Form.Label>
-                                <Col sm={10}>
-                                    <Form.Control required ref={this.numberOfStocksInput} type="number" placeholder="Number of Stocks" />
-                                </Col>
-                            </Form.Group>
+                                            <Col sm={10}>
+                                                <Form.Control required ref={this.numberOfStocksInput} type="number" placeholder="Number of Stocks" />
+                                            </Col>
+                                        </Form.Group>
 
-                            {/* <Form.Group as={Row} controlId="formHorizontalPassword">
+                                        {/* <Form.Group as={Row} controlId="formHorizontalPassword">
                                 <Form.Label column sm={2}>
                                     What is the stock risk 1 = low / 2 = medium / 3 = high
                                 </Form.Label>
@@ -221,52 +221,52 @@ class PortFolio extends React.Component {
                                 </Col>
                             </Form.Group> */}
 
-                            <Form.Group as={Row} controlId="formHorizontalPassword">
-                                <Form.Label column sm={2}>
-                                    What is this stock risk ?
+                                        <Form.Group as={Row} controlId="formHorizontalPassword">
+                                            <Form.Label column sm={2}>
+                                                What is this stock risk ?
                                 </Form.Label>
-                                <Col sm={10}>
-                                    <Form.Control ref={this.riskValueInput} as="select" type="select" placeholder="What is the stock risk">
-                                       
-                                        <option value="1">Low</option>
-                                        <option value="2">Medium</option>
-                                        <option value="3">High</option>
-                                       
-                                     </Form.Control>
-                                </Col>
-                            </Form.Group>
+                                            <Col sm={10}>
+                                                <Form.Control ref={this.riskValueInput} as="select" type="select" placeholder="What is the stock risk">
 
-                            <Form.Group as={Row} controlId="formHorizontalPassword">
-                                <Form.Label fontColor="blue" column sm={2}>
-                                    Image, this is optional
+                                                    <option value="1">Low</option>
+                                                    <option value="2">Medium</option>
+                                                    <option value="3">High</option>
+
+                                                </Form.Control>
+                                            </Col>
+                                        </Form.Group>
+
+                                        <Form.Group as={Row} controlId="formHorizontalPassword">
+                                            <Form.Label column sm={2}>
+                                                Image, this is optional
                                 </Form.Label>
-                                <Col sm={6}>
-                                    <Form.Control type="file" placeholder="Stock image URL" accept="image/*" onChange={this.imgChange}/>
-                                </Col>
-                                <Col sm={4}>
-                                    <Image src={newStockImg.URL} fluid/>
-                                </Col>
-                            </Form.Group>
+                                            <Col sm={6}>
+                                                <Form.Control type="file" placeholder="Stock image URL" accept="image/*" onChange={this.imgChange} />
+                                            </Col>
+                                            <Col sm={4}>
+                                                <Image src={newStockImg.URL} fluid />
+                                            </Col>
+                                        </Form.Group>
 
-                        </Form>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={this.closeModal}>
-                            Close
+                                    </Form>
+                                </Modal.Body>
+                                <Modal.Footer>
+                                    <Button variant="secondary" onClick={this.closeModal}>
+                                        Close
                         </Button>
-                        <Button variant="primary" onClick={this.createStock}>
-                            Add a new stock
+                                    <Button variant="primary" onClick={this.createStock}>
+                                        Add a new stock
                         </Button>
-                    </Modal.Footer>
-                </Modal>
-                </div>
-                {/* <div>
+                                </Modal.Footer>
+                            </Modal>
+                        </div>
+                        {/* <div>
                     <p>
                             <Button variant="primary" href="#/">Homepage</Button>
                         </p>
                         </div> */}
-                        </Container>
-                        </Jumbotron>
+                    </Container>
+                </Jumbotron>
 
             </div>
         );

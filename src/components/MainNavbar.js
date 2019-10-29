@@ -16,18 +16,18 @@ class MainNavbar extends React.Component {
         this.props.handleLogout();
 
         if (window.location.hash !== "#/") {
-            this.setState({redirectToHome: true})
+            this.setState({ redirectToHome: true })
         }
     }
 
-   
+
 
     render() {
         const { activeUser } = this.props;
         const { redirectToHome } = this.state;
 
         if (redirectToHome) {
-            return <Redirect to="/"/>
+            return <Redirect to="/" />
         }
 
         const signupLink = !activeUser ? <Nav.Link href="#/signup">Signup</Nav.Link> : null;

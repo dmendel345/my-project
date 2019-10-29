@@ -39,7 +39,7 @@ class RealEstate extends React.Component {
             newPropertyImg.URL = "";
         }
 
-        this.setState({newPropertyImg});
+        this.setState({ newPropertyImg });
     }
 
 
@@ -80,87 +80,88 @@ class RealEstate extends React.Component {
                 <MainNavbar activeUser={activeUser} handleLogout={handleLogout} />
                 <Jumbotron>
                     <Container>
-                    <div className="RealEstate-header">
-                        <h1>{activeUser.fname}'s Real Estate.</h1>
-                        {/* <Button variant="primary" onClick={this.openModal}>New property</Button> */}
-                    </div>
-                    <Row>
-                        {realEstateCards}
-                    </Row>
-                </Container>
+                        <div className="RealEstate-header">
+                            <h1>{activeUser.fname}'s Real Estate.</h1>
+                            <h4>Start building your Empire</h4>
+                            <Button variant="primary" onClick={this.openModal}>New property</Button>
+                        </div>
+                        <Row>
+                            {realEstateCards}
+                        </Row>
+                    </Container>
 
 
-                <Modal show={showModal} onHide={this.closeModal} size="lg">
-                    <Modal.Header closeButton>
-                        <Modal.Title>New Property</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <Form>
-                            <Form.Group as={Row} controlId="formHorizontalEmail">
-                                <Form.Label column sm={2}>
-                                    Name
+                    <Modal show={showModal} onHide={this.closeModal} size="lg">
+                        <Modal.Header closeButton>
+                            <Modal.Title>New Property</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <Form>
+                                <Form.Group as={Row} controlId="formHorizontalEmail">
+                                    <Form.Label column sm={2}>
+                                        Name of the property
                                 </Form.Label>
-                                <Col sm={10}>
-                                    <Form.Control ref={this.nameInput} type="text" placeholder="Property name" />
-                                </Col>
-                            </Form.Group>
+                                    <Col sm={10}>
+                                        <Form.Control ref={this.nameInput} type="text" placeholder="Property name" />
+                                    </Col>
+                                </Form.Group>
 
-                            <Form.Group as={Row} controlId="formHorizontalPassword">
-                                <Form.Label column sm={2}>
-                                    Description
+                                <Form.Group as={Row} controlId="formHorizontalPassword">
+                                    <Form.Label column sm={2}>
+                                        Description
                                 </Form.Label>
-                                <Col sm={10}>
-                                    <Form.Control ref={this.descInput} type="text" placeholder="Property description" />
-                                </Col>
-                            </Form.Group>
+                                    <Col sm={10}>
+                                        <Form.Control ref={this.descInput} type="text" placeholder="Property description" />
+                                    </Col>
+                                </Form.Group>
 
-                            <Form.Group as={Row} controlId="formHorizontalPassword">
-                                <Form.Label column sm={2}>
-                                    Quote
+                                <Form.Group as={Row} controlId="formHorizontalPassword">
+                                    <Form.Label column sm={2}>
+                                        Quote 
                                 </Form.Label>
-                                <Col sm={10}>
-                                    <Form.Control ref={this.quoteInput} type="number" placeholder="Property quote" />
-                                </Col>
-                            </Form.Group>
+                                    <Col sm={10}>
+                                        <Form.Control ref={this.quoteInput} type="number" placeholder="Property quote" />
+                                    </Col>
+                                </Form.Group>
 
-                            <Form.Group as={Row} controlId="formHorizontalPassword">
-                                <Form.Label column sm={2}>
-                                    Number of Real Estates
+                                <Form.Group as={Row} controlId="formHorizontalPassword">
+                                    <Form.Label column sm={2}>
+                                        Number of properties 
                                 </Form.Label>
-                                <Col sm={10}>
-                                    <Form.Control ref={this.numberOfPropertiesInput} type="number" placeholder="Number of Real Estate" />
-                                </Col>
-                            </Form.Group>
+                                    <Col sm={10}>
+                                        <Form.Control ref={this.numberOfPropertiesInput} type="number" placeholder="Number of Real Estate" />
+                                    </Col>
+                                </Form.Group>
 
-                            <Form.Group as={Row} controlId="formHorizontalPassword">
-                                <Form.Label column sm={2}>
-                                    Image
+                                <Form.Group as={Row} controlId="formHorizontalPassword">
+                                    <Form.Label column sm={2}>
+                                        Image, this is optional
                                 </Form.Label>
-                                <Col sm={6}>
-                                    <Form.Control type="file" placeholder="Property image URL" accept="image/*" onChange={this.imgChange}/>
-                                </Col>
-                                <Col sm={4}>
-                                    <Image src={newPropertyImg.URL} fluid/>
-                                </Col>
-                            </Form.Group>
+                                    <Col sm={6}>
+                                        <Form.Control type="file" placeholder="Property image URL" accept="image/*" onChange={this.imgChange} />
+                                    </Col>
+                                    <Col sm={4}>
+                                        <Image src={newPropertyImg.URL} fluid />
+                                    </Col>
+                                </Form.Group>
 
-                        </Form>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={this.closeModal}>
-                            Close
+                            </Form>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={this.closeModal}>
+                                Close
                         </Button>
-                        <Button variant="primary" onClick={this.createProperty}>
-                            Create Property
+                            <Button variant="primary" onClick={this.createProperty}>
+                                Add your Property
                         </Button>
-                    </Modal.Footer>
-                </Modal>
-                {/* <div>
+                        </Modal.Footer>
+                    </Modal>
+                    {/* <div>
                     <p>
                             <Button variant="primary" href="#/">Homepage</Button>
                         </p>
                         </div> */}
-                        </Jumbotron>
+                </Jumbotron>
 
             </div>
         );
