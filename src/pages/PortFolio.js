@@ -25,13 +25,13 @@ class PortFolio extends React.Component {
                     data: this.getChartData(),
                     backgroundColor: [
                     '#FF6384',
-                    '#faff63',
+                    '#FAFF63',
                     '#36A2EB',
                     ],
                     hoverBackgroundColor: [
-                    '#FF6384',
                     '#30302f',
-                    '#36A2EB',
+                    '#30302f',
+                    '#30302f',
                     ]
                 }]
             }
@@ -63,8 +63,8 @@ class PortFolio extends React.Component {
             } else if (stock.riskValue === 2) {
                 medium++;
             } else  {
-                high++;
-            }
+                 high++;
+             }
 
        });
 
@@ -87,13 +87,13 @@ class PortFolio extends React.Component {
                     data: this.getChartData(),
                     backgroundColor: [
                         '#FF6384',
-                        '#faff63',
+                        '#FAFF63',
                         '#36A2EB',
                     ],
                     hoverBackgroundColor: [
-                        '#FF6384',
                         '#30302f',
-                        '#36A2EB',
+                        '#30302f',
+                        '#30302f',
                     ]
                 }]
             };
@@ -130,9 +130,12 @@ class PortFolio extends React.Component {
             desc: this.descInput.current.value,
             quote: this.quoteInput.current.value,
             numberOfStocks: this.numberOfStocksInput.current.value,
-            riskValue: this.riskValueInput.current.value,
+            riskValue: parseInt(this.riskValueInput.current.value),
             img: this.state.newStockImg.URL,
+            
         }
+        console.log("this.riskValueInput.current.value = "+ this.riskValueInput.current.value)
+        // console.log(this.riskValueInput.current.value)
 
         this.props.addStock(newStock);
         this.closeModal();
@@ -166,9 +169,7 @@ class PortFolio extends React.Component {
                     {/* <Row>
                         Total Value: 
                     </Row> */}
-                </Container>
-
-
+                <div>
                 <Modal show={showModal} onHide={this.closeModal} size="lg">
                     <Modal.Header closeButton>
                         <Modal.Title>New Stock</Modal.Title>
@@ -198,7 +199,7 @@ class PortFolio extends React.Component {
                                     Quote
                                 </Form.Label>
                                 <Col sm={10}>
-                                    <Form.Control required ref={this.quoteInput} type="text" placeholder="Stock quote" />
+                                    <Form.Control required ref={this.quoteInput} type="number" placeholder="Stock quote" />
                                 </Col>
                             </Form.Group>
 
@@ -207,7 +208,7 @@ class PortFolio extends React.Component {
                                     Number of Stocks
                                 </Form.Label>
                                 <Col sm={10}>
-                                    <Form.Control required ref={this.numberOfStocksInput} type="text" placeholder="Number of Stocks" />
+                                    <Form.Control required ref={this.numberOfStocksInput} type="number" placeholder="Number of Stocks" />
                                 </Col>
                             </Form.Group>
 
@@ -227,16 +228,16 @@ class PortFolio extends React.Component {
                                 <Col sm={10}>
                                     <Form.Control ref={this.riskValueInput} as="select" type="select" placeholder="What is the stock risk">
                                        
-                                        <option value="1">low</option>
-                                        <option value="2">medium</option>
-                                        <option value="3">high</option>
+                                        <option value="1">Low</option>
+                                        <option value="2">Medium</option>
+                                        <option value="3">High</option>
                                        
                                      </Form.Control>
                                 </Col>
                             </Form.Group>
 
                             <Form.Group as={Row} controlId="formHorizontalPassword">
-                                <Form.Label column sm={2}>
+                                <Form.Label fontColor="blue" column sm={2}>
                                     Image, this is optional
                                 </Form.Label>
                                 <Col sm={6}>
@@ -254,15 +255,17 @@ class PortFolio extends React.Component {
                             Close
                         </Button>
                         <Button variant="primary" onClick={this.createStock}>
-                            Create Stock
+                            Add a new stock
                         </Button>
                     </Modal.Footer>
                 </Modal>
+                </div>
                 {/* <div>
                     <p>
                             <Button variant="primary" href="#/">Homepage</Button>
                         </p>
                         </div> */}
+                        </Container>
                         </Jumbotron>
 
             </div>

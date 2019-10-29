@@ -11,7 +11,7 @@ class Communication extends React.Component {
     this.state = {}
   }
 
-  comunicate() {
+  communicate() {
   }
 
   render() {
@@ -34,16 +34,22 @@ class Communication extends React.Component {
       <MainNavbar activeUser={activeUser} handleLogout={handleLogout} />
       <Jumbotron>
         <Container>
-          <div className="comunicate">
+        <h1 className="display-3">Contact us today.</h1>
+          <div className="communicate">
           <Image style={background} className="img-fluid" 
           src="https://wallpapercave.com/wp/wp2106900.jpg">
           </Image>
-            <Form style={textStyle1}>
+            <Form style={textStyle1} action="/thankyoupage">
               <Form.Row>
 
                 <Form.Group as={Col} controlId="formGridEmail">
                   <Form.Label>Email</Form.Label>
-                  <Form.Control type="email" placeholder="email@email.com" />
+                  <Form.Control type="email" required placeholder="email@email.com" />
+                </Form.Group>
+
+                <Form.Group as={Col} controlId="formGridCapital">
+                  <Form.Label>Phone number</Form.Label>
+                  <Form.Control type="number" placeholder="555-444-333" />
                 </Form.Group>
               </Form.Row>
 
@@ -57,22 +63,15 @@ class Communication extends React.Component {
                 <Form.Control placeholder="Israeli" />
               </Form.Group>
 
-              <Form.Row>
-
-                <Form.Group as={Col} controlId="formGridInvesrtorType">
-                  <Form.Label>What kind of investor are you ?</Form.Label>
-                  <Form.Control placeholder="Example - I hate risk" />
-                </Form.Group>
-                </Form.Row>
-                <Form.Row>
+               <Form.Row>
                 <Form.Group as={Col} controlId="formGridCapital">
-                  <Form.Label>Your initial investment</Form.Label>
-                  <Form.Control placeholder="300,000 $" />
+                  <Form.Label>What do you need ?</Form.Label>
+                  <Form.Control placeholder="Make changes in my portfolio" />
                 </Form.Group>
               </Form.Row>
 
               <Form.Group id="formGridCheckbox">
-                <Form.Check type="checkbox" label="I want to get rich !" />
+                <Form.Check type="checkbox" label="Call me now !" />
               </Form.Group>
 
               <Button variant="primary" type="submit">

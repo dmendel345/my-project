@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Card, Jumbotron, Container } from 'react-bootstrap'
 // import img from '../components/dollar-money-icon.jpg';
 
 
@@ -13,7 +13,10 @@ class StockCard extends React.Component {
     render() {
         const { stock } = this.props;
         return (
-            <Card style={{ width: '12em' , high: '10em'}} className="stock">
+            console.log("this is Portfolio Card"),
+            <Jumbotron>
+                <Container>
+            <Card style={{ width: '12em' , height: '10em'}} className="stock">
                 <Card.Img variant="top" src={stock.img} />
                 {/* <Card.Img variant="top" src={img} /> */}
                 <Card.Body>
@@ -26,6 +29,8 @@ class StockCard extends React.Component {
                     </Card.Text>
                 </Card.Body>
             </Card>
+            </Container>
+            </Jumbotron>
         );
     }
 }

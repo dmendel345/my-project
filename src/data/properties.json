@@ -4,7 +4,7 @@
         "name": "MALL",
         "desc": "Mall Inc",
         "quote": "2000000",
-        "numberOfStocks": "10",
+        "numberOfProperties": "10",
         "img": "https://tr.rbxcdn.com/f8b7e6d4da65371f7d74e3cc5b5a2f15/420/420/Decal/Png",
         "userId": 1
     },
@@ -13,7 +13,7 @@
         "name": "STORAGE",
         "desc": "Storage Inc",
         "quote": "1500000",
-        "numberOfStocks": "2",
+        "numberOfProperties": "2",
         "img": "https://www.logoarena.com/contestimages/public_new/6701/12536_1454606001_storage11.png",
         "userId": 1
     },
@@ -22,7 +22,7 @@
         "name": "TOWN HOUSE",
         "desc": "Town house",
         "quote": "250000",
-        "numberOfStocks": "3",
+        "numberOfProperties": "3",
         "img": "https://image.freepik.com/free-vector/house-logo_23-2147507198.jpg",
         "userId": 2
     },
@@ -31,7 +31,7 @@
         "name": "GARAGE",
         "desc": "Garage Inc",
         "quote": "150000",
-        "numberOfStocks": "3",
+        "numberOfProperties": "3",
         "img": "https://previews.123rf.com/images/maximkostenko/maximkostenko1605/maximkostenko160500077/56651189-auto-center-garage-service-and-repair-logo-vector-template.jpg",
         "userId": 2
     }

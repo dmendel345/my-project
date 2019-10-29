@@ -13,7 +13,9 @@ class RealEstateCard extends React.Component {
     render() {
         const { property } = this.props;
         return (
-            <Card className="property">
+
+            console.log("this is RealEstate Card"),
+            <Card style={{ width: '12em' , height: '10em'}} className="property">
                 <Card.Img variant="top" src={property.img} />
                 {/* <Card.Img variant="top" src={img} /> */}
                 <Card.Body>

@@ -8,9 +8,10 @@ import SignUp from './pages/SignUp'
 import PortFolio from './pages/PortFolio';
 import RealEstate from './pages/RealEstate';
 import Communication from './pages/Communication';
+import ThankYouPage from './pages/ThankYouPage';
 import jsonUsers from './data/users'
 import jsonStocks from './data/stocks'
-import jsonEstate from './data/properties';
+import jsonProperties from './data/properties';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class App extends React.Component {
       activeUser: null,
       allUsers: jsonUsers,
       allStocks: jsonStocks,
-      allProperties: jsonEstate,
+      allProperties: jsonProperties,
       activeUserStocks: []
       // hack for starting with my stocks
       // activeUserStocks: jsonStocks.filter(stock => stock.userId === 1)
@@ -52,7 +53,7 @@ class App extends React.Component {
     newStock.id = this.state.allStocks[this.state.allStocks.length - 1].id + 1;
 
     // for the sake of the chart example adding a hard coded riskValue (easy)
-    newStock.riskValue = 1;
+    // newStock.riskValue = 1;
 
 
     // 2) update all stocks and active user stocks
@@ -103,6 +104,9 @@ class App extends React.Component {
       </Route>
       <Route path="/communication">
         <Communication stocks={activeUserStocks} activeUser={activeUser} handleLogout={this.handleLogout} addStock={this.addStock}/>
+      </Route>
+      <Route path="/thankyoupage">
+        <ThankYouPage stocks={activeUserStocks} activeUser={activeUser} handleLogout={this.handleLogout} addStock={this.addStock}/>
       </Route>
     </Switch>
   );

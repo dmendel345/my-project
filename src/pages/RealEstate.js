@@ -25,7 +25,7 @@ class RealEstate extends React.Component {
         this.nameInput = React.createRef();
         this.descInput = React.createRef();
         this.quoteInput = React.createRef();
-        this.numberOfRealEstateInput = React.createRef();
+        this.numberOfPropertiesInput = React.createRef();
         this.imgInput = React.createRef();
     }
 
@@ -56,7 +56,7 @@ class RealEstate extends React.Component {
             name: this.nameInput.current.value,
             desc: this.descInput.current.value,
             quote: this.quoteInput.current.value,
-            numberOfRealEstate: this.numberOfRealEstateInput.current.value,
+            numberOfProperties: this.numberOfPropertiesInput.current.value,
             img: this.state.newPropertyImg.URL,
         }
 
@@ -119,7 +119,7 @@ class RealEstate extends React.Component {
                                     Quote
                                 </Form.Label>
                                 <Col sm={10}>
-                                    <Form.Control ref={this.quoteInput} type="text" placeholder="Property quote" />
+                                    <Form.Control ref={this.quoteInput} type="number" placeholder="Property quote" />
                                 </Col>
                             </Form.Group>
 
@@ -128,7 +128,7 @@ class RealEstate extends React.Component {
                                     Number of Real Estates
                                 </Form.Label>
                                 <Col sm={10}>
-                                    <Form.Control ref={this.numberOfRealEstateInput} type="text" placeholder="Number of Real Estate" />
+                                    <Form.Control ref={this.numberOfPropertiesInput} type="number" placeholder="Number of Real Estate" />
                                 </Col>
                             </Form.Group>
 
