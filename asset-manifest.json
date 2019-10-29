@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/dmendel345/my-project/static/css/main.3c3a8c18.chunk.css",
+    "main.js": "/dmendel345/my-project/static/js/main.71c306c4.chunk.js",
+    "main.js.map": "/dmendel345/my-project/static/js/main.71c306c4.chunk.js.map",
+    "runtime-main.js": "/dmendel345/my-project/static/js/runtime-main.dc6c7a93.js",
+    "runtime-main.js.map": "/dmendel345/my-project/static/js/runtime-main.dc6c7a93.js.map",
+    "static/css/2.0624914a.chunk.css": "/dmendel345/my-project/static/css/2.0624914a.chunk.css",
+    "static/js/2.a08e825e.chunk.js": "/dmendel345/my-project/static/js/2.a08e825e.chunk.js",
+    "static/js/2.a08e825e.chunk.js.map": "/dmendel345/my-project/static/js/2.a08e825e.chunk.js.map",
+    "index.html": "/dmendel345/my-project/index.html",
+    "precache-manifest.4f53c797f32b9095f1f8a8f937dd0d01.js": "/dmendel345/my-project/precache-manifest.4f53c797f32b9095f1f8a8f937dd0d01.js",
+    "service-worker.js": "/dmendel345/my-project/service-worker.js",
+    "static/css/2.0624914a.chunk.css.map": "/dmendel345/my-project/static/css/2.0624914a.chunk.css.map",
+    "static/css/main.3c3a8c18.chunk.css.map": "/dmendel345/my-project/static/css/main.3c3a8c18.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dc6c7a93.js",
+    "static/css/2.0624914a.chunk.css",
+    "static/js/2.a08e825e.chunk.js",
+    "static/css/main.3c3a8c18.chunk.css",
+    "static/js/main.71c306c4.chunk.js"
+  ]
+}
